@@ -1,0 +1,120 @@
+import React from 'react';
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, Image } from 'react-native';
+
+const App = ({ navigation }) => {
+  return (
+    <View style={[styles.container, { backgroundColor: '#ffdbc5' }]}>
+      <View style={styles.header}>
+        <View style={styles.headerLeft}>
+          <Image style={styles.logo} source={{ uri: 'https://raw.githubusercontent.com/bgaby7/app/main/2-removebg-preview.png' }} />
+        </View>
+        <Text style={styles.headerText}>Associação GEGAI</Text>
+        <View style={styles.headerRight}></View> {/* Adicionando um espaço vazio para centralizar o texto */}
+      </View>
+      <View style={styles.main}>
+        <View style={styles.form}>
+          <Text style={styles.loginTitle}>Faça seu Login</Text>
+          <Image style={styles.image} source={{ uri: 'https://raw.githubusercontent.com/AliceCSF/GRUPO.github.io/main/imagens/icn1.png.png.png' }} />
+
+          <Text style={styles.label}>ONG:</Text>
+          <TextInput style={styles.input} placeholder="Digite sua ONG" />
+
+          <Text style={styles.label}>Senha:</Text>
+          <TextInput style={styles.input} placeholder="Digite sua senha" secureTextEntry />
+
+          <Button title="Entrar" onPress={() => {}} color="#ff9aba" />
+        </View>
+      </View>
+      <View style={[styles.footer, styles.formFooter]}>
+        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+          <Text style={styles.footerText}>Home</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#ff4375',
+    padding: 10,
+    width: '100%',
+    marginBottom: 20,
+  },
+  headerLeft: {
+    marginRight: 10,
+  },
+  headerText: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+    flex: 1, // Permite que o texto ocupe o espaço restante
+    textAlign: 'center', // Centraliza o texto
+  },
+  headerRight: {
+    marginRight: 10,
+  },
+  main: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loginTitle: {
+    fontSize: 24,
+    marginBottom: 20,
+    color: '#fff',
+  },
+  logo: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+  },
+  image: {
+    width: 100,
+    height: 100,
+    marginBottom: 20,
+  },
+  form: {
+    width: 400, // Largura ajustada para 400
+    padding: 20,
+    backgroundColor: '#ff4375', // Cor da caixa de login
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  label: {
+    marginBottom: 5,
+    color: '#fff', // Cor do texto dentro da caixa de login
+  },
+  input: {
+    width: '100%',
+    padding: 10,
+    marginBottom: 10,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+  },
+  footer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: '#ff4375',
+    padding: 10,
+    width: '100%',
+  },
+  formFooter: {
+    backgroundColor: '#ff4375', // Mesma cor do rodapé
+  },
+  footerText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+});
+
+export default App;
